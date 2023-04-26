@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=DM+Serif+Display&family=Poiret+One&display=swap');
+
+body{
+    font-family: 'Poiret One', cursive;
+    overflow: hidden;
+    background: conic-gradient(from .5turn at top right, darkseagreen, darkslategray);
+}
+
+.container{
+    width: 95%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.digitalClock{
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    background: rgb(0, 0, 0, 0.1);
+}
+
+.digitalClock h1{
+    display: inline-block;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+/* 1rem == 16px. It is good practice to use rem over px when applicable. 
+/*USE RESPONSIVE DESIGN TESTING to test program on different height and width pages
+/*this media query sets the max width the bars will be displayed. As you resize the screen to a width less than 768px, the bars will dissapear to accomodate smaller screens. */
+@media(max-width:768px){
+    #bar1, #bar2{
+        display: none;
+    }
+
+    .digitalClock{
+        text-align: center;
+        width: 100%;
+    }
+/* this element changes the display to a block if the window is resized to a width less than 768px. The Date/time will stack to accomodate smaller screens. */
+    .digitalClock h1{
+        display: block;
+    }
+}
+
+/* this element will lower the font size by 1rem if the screen size is minimized below 480px */
+@media(max-width:480px){
+    .digitalClock h1{
+        font-size: 4rem;
+    }
+}
